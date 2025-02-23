@@ -217,6 +217,10 @@
 }
 
 @layer components {
+	.primary-header {
+		padding-block: 1rem;
+	}
+
 	.primary-header__inner {
 		display: flex;
 		justify-content: space-between;
