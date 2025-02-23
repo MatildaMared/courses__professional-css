@@ -177,6 +177,10 @@
 	a:focus-visible {
 		color: var(--text-brand-light);
 	}
+
+	img {
+		border-radius: var(--border-radius-3);
+	}
 }
 
 @layer layout {
@@ -209,6 +213,21 @@
 				--padding: 4.5rem;
 			}
 		}
+	}
+}
+
+@layer components {
+	.primary-header__inner {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+	}
+
+	.primary-nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
 	}
 }
 
