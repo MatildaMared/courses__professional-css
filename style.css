@@ -236,6 +236,15 @@
 			--equal-columns-vertical-alignment: center;
 		}
 	}
+
+	.flow > * + * {
+		margin-top: var(--flow-spacing, 1em);
+	}
+
+	.grid-flow {
+		display: grid;
+		gap: var(--grid-flow-gap, 1rem);
+	}
 }
 
 @layer components {
