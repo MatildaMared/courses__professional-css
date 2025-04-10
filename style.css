@@ -300,6 +300,24 @@
 		font-size: var(--card-title-font-size, var(--font-size-heading-sm));
 		color: var(--card-title-color, var(--text-brand));
 	}
+
+	.button {
+		display: inline-flex;
+		padding: 0.5rem 1rem;
+		background-color: var(--background-accent-main);
+		font-family: var(--ff-heading);
+		font-weight: 700;
+		border-radius: var(--border-radius-2);
+		text-decoration: none;
+		cursor: pointer;
+		font-size: var(--font-size-md);
+	}
+
+	.button:hover,
+	.button:focus-visible {
+		color: var(--text-high-contrast);
+		background-color: var(--background-accent-light);
+	}
 }
 
 @layer utilities {
