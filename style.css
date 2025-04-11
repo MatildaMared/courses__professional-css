@@ -301,10 +301,51 @@
 		font-weight: 700;
 	}
 
-	.primary-nav ul {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem 1rem;
+	[aria-controls="primary-nav"] {
+		z-index: 100;
+		background: transparent;
+		border: 0;
+		cursor: pointer;
+
+		img {
+			border-radius: 0;
+		}
+	}
+
+	.primary-nav {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem 1rem;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		@media (width < 760px) {
+			background-color: var(--background-accent-main);
+			padding: 2rem;
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: var(--font-size-lg);
+			font-family: var(--ff-heading);
+			font-weight: 700;
+			border-radius: 0 0 0 var(--border-radius-3);
+			z-index: 10;
+
+			ul {
+				flex-direction: column;
+				gap: 0;
+			}
+
+			li + li {
+				border-top: 2px solid var(--background-accent-light);
+				margin-block-start: 1.5rem;
+				padding-block-start: 1.5rem;
+			}
+		}
 	}
 
 	.card {
