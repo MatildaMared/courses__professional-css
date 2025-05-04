@@ -245,6 +245,17 @@
 		display: grid;
 		gap: var(--grid-flow-gap, 1rem);
 	}
+
+	.grid-auto-fit {
+		--auto-fit-min-col-size: 275px;
+
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(min(var(--auto-fit-min-col-size), 100%), 1fr)
+		);
+	}
 }
 
 @layer components {
@@ -275,6 +286,12 @@
 		background-image: url(/assets/hero.webp);
 		background-size: cover;
 		background-position: center;
+	}
+
+	.mushroom-guide {
+		--card-title-font-size: var(--font-size-lg);
+		--card-title-color: var(--text-high-contrast);
+		--card-gap: 0.75rem;
 	}
 
 	.hero__title {
@@ -397,6 +414,12 @@
 		color: var(--card-title-color, var(--text-brand));
 	}
 
+	.card__note {
+		background-color: var(--background-extra-light);
+		padding: 0.75rem;
+		border-radius: var(--border-radius-2);
+	}
+
 	.button {
 		display: inline-flex;
 		padding: 0.5rem 1rem;
@@ -413,6 +436,41 @@
 	.button:focus-visible {
 		color: var(--text-high-contrast);
 		background-color: var(--background-accent-light);
+	}
+
+	.tag-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+
+		li {
+			background-color: var(--tag-bg, red);
+			padding: 0 0.25rem;
+			font-family: var(--ff-heading);
+			color: var(--text-high-contrast);
+			font-size: var(--font-size-sm);
+			border-radius: var(--border-radius-1);
+		}
+
+		[data-edible="edible"] {
+			--tag-bg: var(--background-accent-main);
+		}
+
+		[data-edible="toxic"] {
+			--tag-bg: var(--clr-red-500);
+		}
+
+		[data-season="summer"] {
+			--tag-bg: var(--background-accent-main);
+		}
+
+		[data-season="fall"] {
+			--tag-bg: var(--clr-orange-500);
+		}
+
+		[data-season="spring"] {
+			--tag-bg: var(--clr-teal-500);
+		}
 	}
 }
 
