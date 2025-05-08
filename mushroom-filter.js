@@ -8,10 +8,20 @@ const currentFilters = {
 	edible: "all",
 };
 
+cards.forEach((card, index) => {
+	const mushroomId = `mushroom-${index + 1}`;
+	card.style.viewTransitionName = `mushroom-card-${mushroomId}`;
+});
+
 function updateFilter(e) {
 	const filterType = e.target.name;
 	currentFilters[filterType] = e.target.value;
-	filterCards();
+
+	if (!document.startViewTransition) {
+		filterCards();
+	}
+
+	document.startViewTransition(() => filterCards());
 }
 
 function filterCards() {
