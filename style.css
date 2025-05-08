@@ -302,6 +302,9 @@
 		background-image: url(/assets/hero.webp);
 		background-size: cover;
 		background-position: center;
+		animation: fade-out forwards;
+		animation-timeline: view();
+		animation-range-start: exit;
 	}
 
 	.mushroom-guide {
@@ -636,5 +639,14 @@
 	}
 	.font-size-lg {
 		font-size: var(--font-size-lg);
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
 	}
 }
